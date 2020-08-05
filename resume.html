@@ -6,19 +6,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <div id="main_menu">
     <div class="logo">
-      <a href="index.html"> <img src="images/new.png" alt="Logo"></a>
+      <a href="index.html"> <img src="images/up_banner.png" alt="Logo"></a>
     </div>
-    <div class="inner_menu">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a class="active" href="resume.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+    <div class="navbar">
+      <div class="dropdown">
+      <button class="dropbtn">Menu
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="index.html">Home</a>
+        <a class="active" href="resume.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
     </div>
   </div>
-  <div class="background-image", style="background-image:url('images/bg.png');">
+  </div>
   <header>
     <title>Sachin Hegde's Resume</title>
     <link rel="stylesheet" href="css/master.css">
@@ -31,9 +36,10 @@
   </header>
 </head>
 <body>
-  <br><br><br><br><br><br>
+  <div class="background-image", style="background-image:url('images/bg.png');">
+  <br><br><br><br>
     <h1>About me</h1>
-    <h4>Bachelor of Technology in Computer Science and Engineering</h4>
+    <h4></h4>
 
     <p>Email: <a href="mailto:sachinhegde0411@gmail.com" target="_blank" style="color:beige">sachinhegde0411@gmail.com</a></p>
     <!-- don't post physical address, personal phone number or other personal information on the web! -->
@@ -54,17 +60,38 @@
         <span class="subheading">Discovered some rare DS & Algo concepts</span><br>
         <span class="subheading">Done projects on graphs, Client & server</span>
 
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+  <script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
 
-  </body>
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
 
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+</body>
   <footer>
   <hr>
   <p><a class="link" href="index.html">Back to my portal</a><p>
   <a href="https://www.facebook.com/Sachin.Hegde04" class="fa fa-facebook"></a>
+  <a href="https://www.instagram.com/havyaka_maani" class="fa fa-instagram"></a>
   <a href="https://twitter.com/SachinMHegde04" class="fa fa-twitter"></a>
   <a href="https://github.com/sachinhegde04" class="fa fa-github"></a>
   <a href="https://www.linkedin.com/in/sachin-hegde-85112317a" class="fa fa-linkedin"></a>
   <p class="copyright text-muted">Copyright &copy; Sachin Hegde 2020</p>
   </footer>
-
+</div>
 </html>
