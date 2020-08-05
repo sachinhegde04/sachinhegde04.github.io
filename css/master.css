@@ -148,7 +148,7 @@ input[type=submit]:hover {
 /* Add a background color and some padding around the form */
 .container {
   border-radius: 5px;
-  padding: 30px;
+  padding: 50px;
 }
 .swap label {
   float: center;
