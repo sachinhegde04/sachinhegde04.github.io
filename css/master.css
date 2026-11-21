@@ -1,257 +1,807 @@
-/* Cascading stylesheet for the website */
+/* ==========================================================================
+   Sachin Hegde — Personal Portfolio Stylesheet
+   Modern Engineering Theme (Dark Slate & Emerald with Light Mode Support)
+   ========================================================================== */
 
-/* Text inside these asterisks and slashes are comments for human */
+:root {
+  --bg-primary: #090e1a;
+  --bg-secondary: #0f172a;
+  --bg-card: rgba(17, 24, 39, 0.78);
+  --bg-card-hover: rgba(23, 33, 54, 0.92);
+  --bg-nav: rgba(9, 14, 26, 0.85);
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --accent: #10b981;
+  --accent-bright: #34d399;
+  --accent-glow: rgba(16, 185, 129, 0.16);
+  --secondary-accent: #38bdf8;
+  --border: rgba(148, 163, 184, 0.14);
+  --border-hover: rgba(16, 185, 129, 0.45);
+  --shadow-lg: 0 20px 45px -15px rgba(0, 0, 0, 0.55);
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
 
-  a.link {
-    color: beige;/* set the text color to blue here */
-    text-decoration: none; /* This means we do not want hyperlinks to be underlined */
-  }
+[data-theme="light"] {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --bg-card: rgba(255, 255, 255, 0.92);
+  --bg-card-hover: #ffffff;
+  --bg-nav: rgba(248, 250, 252, 0.88);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --accent: #059669;
+  --accent-bright: #047857;
+  --accent-glow: rgba(5, 150, 105, 0.12);
+  --secondary-accent: #0284c7;
+  --border: rgba(15, 23, 42, 0.1);
+  --border-hover: rgba(5, 150, 105, 0.4);
+  --shadow-lg: 0 18px 38px -15px rgba(15, 23, 42, 0.12);
+}
 
-  a.link:hover {
-    color: white;/* set the text color to red here */
-    text-decoration: none; /* This means we do not wanAt hyperlinks to be underlined */
-  }
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  body {
-    /* set the background color here */
-    color: black; /* set the text color to black here */
-    font-family: Arial, Helvetica, sans-serif;/* set the font here */
-    text-align: center;/* set the text alignment here */
+html {
+  scroll-behavior: smooth;
+}
 
-   }
-   .background-image{
-     background-repeat: no-repeat;
-     background-attachment: fixed;
-     background-size: cover;
-   }
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.65;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
 
-  footer {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-  }
+/* Subtle ambient background mesh */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 12%, rgba(16, 185, 129, 0.11), transparent 38%),
+    radial-gradient(circle at 85% 25%, rgba(56, 189, 248, 0.09), transparent 40%),
+    radial-gradient(circle at 50% 90%, rgba(16, 185, 129, 0.07), transparent 45%);
+  pointer-events: none;
+  z-index: -1;
+}
 
-  h1 {
-    font-size: 40px;
-    margin-bottom: 0.5rem;
-    margin-top: 3rem;
-   }
-
-  h2 {
-    /*color: #075AAB;*/
-    margin-bottom: 2.5rem;
-    margin-right: 2.5rem;
-    /* set the text color of to #075AAB here */
-    /* set both the bottom margin and top margin to 2.5rem here */
-   }
-
-  h3 {
-    margin-bottom: 0;
-    margin-top: 2rem;
-  }
-
-  h4 {
-    margin-bottom: 1rem;
-    margin-top: 0.5rem;
-  }
-
-  h5 {
-    margin-top: 0.5rem;
-  }
-
-  hr {
-    margin-bottom: 3rem;
-    margin-top: 3rem;
-  }
-
-  /* this controls how the bullet points in the resume page looks */
-
-.fa {
-  padding: 20px;
-  font-size: 20px;
-  width: 20px;
-  text-align: center;
+a {
+  color: inherit;
   text-decoration: none;
-  border-radius: 75%;
 }
 
-/* Add a hover effect if you want */
-.fa:hover {
-  opacity: 0.7;
-}
-
-/* Set a specific color for each brand */
-
-/* Facebook */
-.fa-facebook {
-  background: black;
-  color: white;
-}
-
-/* Twitter */
-.fa-twitter {
-  background: black;
-  color: white;
-}
-.fa-github {
-  background: black;
-  color: white;
-}
-.fa-linkedin {
-  background: black;
-  color: white;
-}
-.fa-instagram{
-  background: black;
-  color: white;
-}
-
-
-#main_menu{width: 100%; position: relative;}
-.logo{
-  width: 450px;
-  height: 122px;
-  position: absolute;
-  left: 50%;
-  top: 0;
-  content: "" ;
-  margin-left: -150px;
-  text-align: center;
-}
-/* Style inputs with type="text", select elements and textareas */
-input[type=text], select, textarea {
-  width: 100%; /* Full width */
-  padding: 12px; /* Some padding */
-  border: 1px solid #ccc; /* Gray border */
-  border-radius: 4px; /* Rounded borders */
-  box-sizing: border-box; /* Make sure that padding and width stays in place */
-  margin-top: 6px; /* Add a top margin */
-  margin-bottom: 16px; /* Bottom margin */
-  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
-
-}
-
-/* Style the submit button with a specific background color etc */
-input[type=submit] {
-  background-color: beige ;
-  color: black;
-  padding: 10px 10px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-/* When moving the mouse over the submit button, add a darker green color */
-input[type=submit]:hover {
-  background-color: green;
-}
-
-/* Add a background color and some padding around the form */
 .container {
-  border-radius: 5px;
-  padding: 50px;
-}
-.swap label {
-  float: center;
-  color: black;
-  font-size: 25px;
-}
-.field label{
-  float: left;
-  color: black;
-  font-size: 15px;
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
-input:focus+label {
-  font-family: 'Roboto Medium', sans-serif;
-  font-size: 16px;
-  color: #000;
+/* ==========================================================================
+   Navigation Bar
+   ========================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg-nav);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+}
+
+.brand-monogram {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #04130d;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
+}
+
+.brand-text span {
+  color: var(--accent-bright);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.nav-links a {
+  padding: 0.5rem 0.95rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.92rem;
   font-weight: 500;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
 }
 
-.navbar {
-  overflow: hidden;
-  background-color: #333;
-  font-family: Arial;
+.nav-links a:hover {
+  color: var(--text-primary);
+  background: var(--accent-glow);
 }
 
-/* Links inside the navbar */
-.navbar a {
-  float: left;
-  font-size: 16px;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+.nav-links a.active {
+  color: var(--accent-bright);
+  background: var(--accent-glow);
+  font-weight: 600;
 }
 
-/* The dropdown container */
-.dropdown {
-  float: left;
-  overflow: hidden;
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-/* Dropdown button */
-.dropdown .dropbtn {
-  font-size: 16px;
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit; /* Important for vertical align on mobile phones */
-  margin: 0; /* Important for vertical align on mobile phones */
+.icon-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-/* Add a red background color to navbar links on hover */
-.navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
+.icon-btn:hover {
+  border-color: var(--border-hover);
+  color: var(--accent-bright);
 }
 
-/* Dropdown content (hidden by default) */
-.dropdown-content {
+.mobile-toggle {
   display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
 }
 
-/* Links inside the dropdown */
-.dropdown-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
+/* ==========================================================================
+   Main Content & Hero
+   ========================================================================== */
+main {
+  flex: 1;
+  padding: 3.5rem 0 4.5rem;
+}
+
+.hero {
+  padding: 2rem 0 3rem;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.42rem 0.95rem;
+  border-radius: 999px;
+  background: var(--accent-glow);
+  border: 1px solid var(--border-hover);
+  color: var(--accent-bright);
+  font-size: 0.84rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-bright);
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2);
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 5vw, 3.65rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.15rem;
+}
+
+.hero h1 .highlight {
+  background: linear-gradient(120deg, var(--accent-bright), var(--secondary-accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-lead {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  max-width: 680px;
+  margin-bottom: 2rem;
+}
+
+.hero-lead strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-bottom: 3rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.78rem 1.35rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.94rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #04130d;
+  box-shadow: 0 8px 22px -6px rgba(16, 185, 129, 0.45);
+}
+
+.btn-primary:hover {
+  background: var(--accent-bright);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border-color: var(--border);
+}
+
+.btn-secondary:hover {
+  border-color: var(--border-hover);
+  background: var(--bg-card-hover);
+  transform: translateY(-1px);
+}
+
+/* Metrics / Highlights Grid */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 3.5rem;
+}
+
+.metric-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.3rem;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.metric-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+}
+
+.metric-value {
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.metric-label {
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   Section Headers & Cards
+   ========================================================================== */
+.section-block {
+  margin-bottom: 3.5rem;
+}
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.75rem;
+}
+
+.section-title {
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.section-title i {
+  color: var(--accent-bright);
+  font-size: 1.15rem;
+}
+
+.section-link {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent-bright);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.section-link:hover {
+  text-decoration: underline;
+}
+
+.card-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.65rem;
+  box-shadow: var(--shadow-lg);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--border-hover);
+}
+
+/* ==========================================================================
+   Timeline (Experience & Education)
+   ========================================================================== */
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+}
+
+.exp-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  position: relative;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.exp-card:hover {
+  border-color: var(--border-hover);
+}
+
+.exp-card.featured {
+  border-color: rgba(16, 185, 129, 0.35);
+  background: linear-gradient(145deg, var(--bg-card), rgba(16, 185, 129, 0.05));
+}
+
+.exp-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.exp-role {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.exp-company {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent-bright);
+  margin-top: 0.15rem;
+}
+
+.exp-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.3rem;
+}
+
+.date-pill {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+
+.date-pill.current {
+  background: var(--accent-glow);
+  border-color: var(--border-hover);
+  color: var(--accent-bright);
+  font-weight: 600;
+}
+
+.exp-location {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.exp-list {
+  margin: 0.75rem 0 1.1rem 1.15rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.exp-list li {
+  margin-bottom: 0.45rem;
+}
+
+/* Skill Tags */
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  padding: 0.32rem 0.72rem;
+  border-radius: 6px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+}
+
+.tag.accent {
+  background: var(--accent-glow);
+  border-color: rgba(16, 185, 129, 0.3);
+  color: var(--accent-bright);
+}
+
+/* ==========================================================================
+   Skills & Certifications Grid
+   ========================================================================== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.skill-group h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.9rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.skill-group h3 i {
+  color: var(--secondary-accent);
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+}
+
+.cert-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.cert-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--accent-glow);
+  color: var(--accent-bright);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cert-name {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* ==========================================================================
+   Contact Page & Form
+   ========================================================================== */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 1.75rem;
+  align-items: start;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.contact-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.contact-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--accent-glow);
+  color: var(--accent-bright);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.contact-val {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: 0.15rem;
+  word-break: break-word;
+}
+
+.contact-val a:hover {
+  color: var(--accent-bright);
+}
+
+.form-group {
+  margin-bottom: 1.15rem;
+}
+
+.form-group label {
   display: block;
-  text-align: left;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 0.45rem;
 }
 
-/* Add a grey background color to dropdown links on hover */
-.dropdown-content a:hover {
-  background-color: #ddd;
+.form-control {
+  width: 100%;
+  padding: 0.78rem 0.95rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-#myBtn {
-  display: none; /* Hidden by default */
-  position: fixed; /* Fixed/sticky position */
-  bottom: 20px; /* Place the button at the bottom of the page */
-  right: 30px; /* Place the button 30px from the right */
-  z-index: 99; /* Make sure it does not overlap */
-  border: none; /* Remove borders */
-  outline: none; /* Remove outline */
-  background-color: green; /* Set a background color */
-  color: white; /* Text color */
-  cursor: pointer; /* Add a mouse pointer on hover */
-  padding: 15px; /* Some padding */
-  border-radius: 10px; /* Rounded corners */
-  font-size: 18px; /* Increase font size */
+.form-control:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
 }
 
-#myBtn:hover {
-  background-color: #555; /* Add a dark-grey background on hover */
+textarea.form-control {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Footer & Utilities
+   ========================================================================== */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 2.25rem 0;
+  background: var(--bg-secondary);
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.social-links a {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.social-links a:hover {
+  color: var(--accent-bright);
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+}
+
+.copyright {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--border-hover);
+  background: var(--accent);
+  color: #04130d;
+  font-size: 1rem;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  z-index: 90;
+  transition: transform 0.2s ease;
+}
+
+#scrollTopBtn:hover {
+  transform: translateY(-2px);
+}
+
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--bg-card-hover);
+  color: var(--accent-bright);
+  border: 1px solid var(--border-hover);
+  padding: 0.65rem 1.2rem;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s ease;
+  z-index: 200;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+@media (max-width: 860px) {
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .skills-grid,
+  .card-grid-2,
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+  .exp-meta {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .mobile-toggle {
+    display: inline-flex;
+  }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    padding: 1rem 1.5rem;
+    gap: 0.4rem;
+  }
+  .nav-links.open {
+    display: flex;
+  }
+  .nav-links a {
+    width: 100%;
+    padding: 0.7rem 0.9rem;
+  }
+}
+
+@media print {
+  .site-header, .site-footer, #scrollTopBtn, .no-print {
+    display: none !important;
+  }
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+  .exp-card, .card, .cert-item {
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+    background: #fff !important;
+  }
 }

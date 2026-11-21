@@ -1,84 +1,255 @@
-  <!doctype html>
-
-  <!-- this is a comment for human! -->
-
-  <html lang="en">
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="initial-scale=0.8, zoom=10%, width=device-width, target-densitydpi=high-dpi">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sachin Hegde | Java Developer · EY Bengaluru</title>
+  <meta name="description" content="Portfolio of Sachin Hegde — Java & Spring Boot Backend Developer at EY Bengaluru with 5+ years of experience building scalable microservices.">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/master.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand" aria-label="Sachin Hegde Home">
+        <span class="brand-monogram">smh</span>
+        <span class="brand-text">Sachin <span>Hegde</span></span>
+      </a>
 
-<div id="main_menu">
-  <div class="logo">
-    <a href="index.html"> <img src="images/up_banner.png" alt="Logo"></a>
-  </div>
-  <div class="navbar">
-    <div class="dropdown">
-    <button class="dropbtn">Menu
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a class="active" href="index.html">Home</a>
-      <a href="resume.html">About</a>
-      <a href="contact.html">Contact</a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html" class="active">Home</a>
+        <a href="resume.html">Experience &amp; Resume</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeToggle" title="Toggle Light/Dark Theme" aria-label="Toggle Theme">
+          <i class="fa-solid fa-sun"></i>
+        </button>
+        <button class="icon-btn mobile-toggle" id="mobileToggle" title="Menu" aria-label="Open Navigation Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
     </div>
-  </div>
-</div>
-</div>
-    <header>
-        <title>Sachin Hegde</title>
-        <link rel="stylesheet" href="css/master.css">
-        <link rel="FaviconIcon" href="favicon.ico" type="image/x-icon">
-        <link rel="shortcut" href="favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="name" content="Sachin Hegde's Portal">
-    </header>
-  </head>
-    <body>
-      <div class="background-image", style="background-image:url('images/bg.png');">
-      <br><br><br><br>
-      <h1>Sachin Hegde</h1>
-      <h2>About me</h2>
-      <p> I am a Java developer at CGI, Bengaluru.</p>
-      <p> Having 3.5 years of experience in IT</p>
-      <p>I am looking for better opportunity in Java, Spring Developer role</p><br>
-      <!--
-      <h2>Credentials and Portfolio</h2>
+  </header>
 
-      <p><a class="link" href="resume.html">My Resume</a> |<a class="link" href="https://github.com/sachinhegde04"> My GitHub</a></p>-->
-    <h2>Contact</h2>
-      <p>Email: <a href="mailto:sachinhegde0411@gmail.com" style="color:beige">sachinhegde0411@gmail.com</a></p>
-      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-      <script>
-      //Get the button
-      var mybutton = document.getElementById("myBtn");
+  <main>
+    <div class="container">
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          <span>Java Developer at EY · Bengaluru</span>
+        </div>
 
-      // When the user scrolls down 20px from the top of the document, show the button
-      window.onscroll = function() {scrollFunction()};
+        <h1>
+          Building resilient backend systems with <span class="highlight">Java &amp; Microservices</span>.
+        </h1>
 
-      function scrollFunction() {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        mybutton.style.display = "block";
+        <p class="hero-lead">
+          Hi, I’m <strong>Sachin Hegde</strong> — a software engineer based in Bengaluru with <strong>5+ years of experience</strong> designing scalable enterprise applications, RESTful APIs, and distributed event-driven services. Currently working at <strong>EY (Ernst &amp; Young)</strong>, following over five years delivering production systems at <strong>CGI</strong>.
+        </p>
+
+        <div class="cta-row">
+          <a href="resume.html" class="btn btn-primary">
+            <i class="fa-solid fa-file-lines"></i>
+            <span>View Experience &amp; Resume</span>
+          </a>
+          <a href="contact.html" class="btn btn-secondary">
+            <i class="fa-solid fa-paper-plane"></i>
+            <span>Get in Touch</span>
+          </a>
+          <button type="button" class="btn btn-secondary" onclick="copyEmail()">
+            <i class="fa-regular fa-copy"></i>
+            <span>Copy Email</span>
+          </button>
+        </div>
+
+        <!-- Career Snapshot Metrics -->
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-value">5+ Years</div>
+            <div class="metric-label">Enterprise IT Experience</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">EY Bengaluru</div>
+            <div class="metric-label">Current Role (Apr 2026 – Present)</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">CGI (5.4 Yrs)</div>
+            <div class="metric-label">Previous Tenure (2020 – 2026)</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">B.Tech CSE</div>
+            <div class="metric-label">Ramaiah University · 8.02 CGPA</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Career Journey Summary -->
+      <section class="section-block">
+        <div class="section-header">
+          <h2 class="section-title">
+            <i class="fa-solid fa-briefcase"></i>
+            <span>Career Highlights</span>
+          </h2>
+          <a href="resume.html" class="section-link">
+            <span>Full Resume</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="card-grid-2">
+          <article class="card">
+            <div class="exp-top">
+              <div>
+                <h3 class="exp-role">Java Developer</h3>
+                <div class="exp-company">EY (Ernst &amp; Young) · Bengaluru</div>
+              </div>
+              <span class="date-pill current">Apr 2026 – Present</span>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1rem;">
+              Engineering modern Java and Spring Boot microservices, distributed APIs, and cloud-ready enterprise backend solutions in Bengaluru.
+            </p>
+            <div class="tag-list">
+              <span class="tag accent">Java</span>
+              <span class="tag accent">Spring Boot</span>
+              <span class="tag">Microservices</span>
+              <span class="tag">Apache Kafka</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="exp-top">
+              <div>
+                <h3 class="exp-role">Java Developer</h3>
+                <div class="exp-company">CGI · Bengaluru</div>
+              </div>
+              <span class="date-pill">Oct 2020 – Mar 2026</span>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1rem;">
+              Over 5 years building and supporting enterprise Java applications, REST/SOAP integrations, Kafka messaging pipelines, and MySQL databases in SAFe® Agile teams.
+            </p>
+            <div class="tag-list">
+              <span class="tag">Spring Boot</span>
+              <span class="tag">REST / SOAP</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">SAFe® 5</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Core Stack -->
+      <section class="section-block" style="margin-bottom: 0;">
+        <div class="section-header">
+          <h2 class="section-title">
+            <i class="fa-solid fa-layer-group"></i>
+            <span>Core Technology Stack</span>
+          </h2>
+        </div>
+
+        <div class="card">
+          <div class="tag-list">
+            <span class="tag accent">Java</span>
+            <span class="tag accent">Spring Boot</span>
+            <span class="tag accent">Microservices</span>
+            <span class="tag">RESTful APIs</span>
+            <span class="tag">SOAP</span>
+            <span class="tag">Apache Kafka</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">PL/SQL</span>
+            <span class="tag">Python</span>
+            <span class="tag">Git</span>
+            <span class="tag">Postman</span>
+            <span class="tag">Data Structures &amp; Algorithms</span>
+            <span class="tag">SAFe® Agile</span>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="copyright">Copyright &copy; 2026 Sachin Hegde. All rights reserved.</p>
+      <div class="social-links">
+        <a href="https://github.com/sachinhegde04" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/sachin-hegde-85112317a" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="https://twitter.com/SachinMHegde04" target="_blank" rel="noopener noreferrer" aria-label="Twitter" title="Twitter">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+        <a href="https://www.instagram.com/havyaka_maani" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/Sachin.Hegde04" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <button id="scrollTopBtn" title="Back to top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">Email copied to clipboard!</div>
+
+  <script>
+    // Theme toggle persistence
+    const root = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    const savedTheme = localStorage.getItem('portfolio-theme');
+    if (savedTheme === 'light') {
+      root.setAttribute('data-theme', 'light');
+      themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
+    }
+
+    themeToggle.addEventListener('click', () => {
+      const isLight = root.getAttribute('data-theme') === 'light';
+      if (isLight) {
+        root.removeAttribute('data-theme');
+        localStorage.setItem('portfolio-theme', 'dark');
+        themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
       } else {
-        mybutton.style.display = "none";
+        root.setAttribute('data-theme', 'light');
+        localStorage.setItem('portfolio-theme', 'light');
+        themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
       }
-      }
+    });
 
-      // When the user clicks on the button, scroll to the top of the document
-      function topFunction() {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-      }
-      </script>
-    </body>
-    <footer>
-      <hr>
-      <a href="https://www.facebook.com/Sachin.Hegde04" class="fa fa-facebook"></a>
-      <a href="https://www.instagram.com/havyaka_maani" class="fa fa-instagram"></a>
-      <a href="https://twitter.com/SachinMHegde04" class="fa fa-twitter"></a>
-      <a href="https://github.com/sachinhegde04" class="fa fa-github"></a>
-      <a href="https://www.linkedin.com/in/sachin-hegde-85112317a" class="fa fa-linkedin"></a>
-      <p class="copyright text-muted">Copyright &copy; Sachin Hegde 2020</p>
-    </footer>
-</div>
-  </html>
+    // Mobile menu
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navLinks = document.getElementById('navLinks');
+    mobileToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    // Copy email helper
+    function copyEmail() {
+      navigator.clipboard.writeText('sachinhegde0411@gmail.com');
+      const toast = document.getElementById('toast');
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2400);
+    }
+
+    // Scroll to top
+    const scrollBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => {
+      scrollBtn.style.display = (window.scrollY > 240) ? 'inline-flex' : 'none';
+    });
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
