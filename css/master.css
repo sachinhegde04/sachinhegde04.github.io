@@ -448,6 +448,57 @@ main {
   transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
+/* Nested Role Progression inside an Experience Card */
+.role-progression {
+  position: relative;
+  margin: 0.75rem 0 1.1rem 0.35rem;
+  padding-left: 1.35rem;
+  border-left: 2px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.role-step {
+  position: relative;
+}
+
+.role-dot {
+  position: absolute;
+  left: -1.72rem;
+  top: 0.38rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  border: 2px solid var(--bg-secondary);
+}
+
+.role-dot.promoted {
+  background: var(--accent-bright);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.role-step-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.role-step-title {
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.role-step-date {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
 .exp-card:hover {
   border-color: var(--border-hover);
 }
