@@ -312,6 +312,9 @@ main {
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   padding: 1.25rem 1.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
@@ -325,7 +328,37 @@ main {
   font-weight: 800;
   letter-spacing: -0.02em;
   color: var(--text-primary);
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.25rem;
+}
+
+.metric-value.metric-with-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 1.28rem;
+  line-height: 1.2;
+}
+
+.company-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  border-radius: 6px;
+  padding: 4px 7px;
+  height: 30px;
+  min-width: 34px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.14);
+}
+
+.company-badge img {
+  height: 20px;
+  width: auto;
+  max-width: 44px;
+  object-fit: contain;
+  display: block;
 }
 
 .metric-label {

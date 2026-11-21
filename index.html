@@ -20,13 +20,13 @@
         <span class="brand-monogram">smh</span>
         <span class="brand-text">Sachin <span>Hegde</span></span>
       </a>
-
+      
       <nav class="nav-links" id="navLinks">
         <a href="index.html" class="active">Home</a>
         <a href="resume.html">Experience &amp; Resume</a>
         <a href="contact.html">Contact</a>
       </nav>
-
+      
       <div class="nav-actions">
         <button class="icon-btn" id="themeToggle" title="Toggle Light/Dark Theme" aria-label="Toggle Theme">
           <i class="fa-solid fa-sun"></i>
@@ -37,24 +37,24 @@
       </div>
     </div>
   </header>
-
+  
   <main>
     <div class="container">
       <!-- Hero Section -->
       <section class="hero">
         <div class="status-badge">
           <span class="status-dot"></span>
-          <span>Java Developer at E&Y · Bengaluru</span>
+          <span>Senior Consultant at E&Y · Bengaluru</span>
         </div>
-
+        
         <h1>
           Building resilient backend systems with <span class="highlight">Java &amp; Microservices</span>.
         </h1>
-
+        
         <p class="hero-lead">
           Hi, I’m <strong>Sachin Hegde</strong> — a software engineer based in Bengaluru with <strong>5+ years of experience</strong> designing scalable enterprise applications, RESTful APIs, and distributed event-driven services. Currently working at <strong>E&Y (Ernst &amp; Young)</strong>, following over five years delivering production systems at <strong>CGI</strong>.
         </p>
-
+        
         <div class="cta-row">
           <a href="resume.html" class="btn btn-primary">
             <i class="fa-solid fa-file-lines"></i>
@@ -69,7 +69,7 @@
             <span>Copy Email</span>
           </button>
         </div>
-
+        
         <!-- Career Snapshot Metrics -->
         <div class="metrics-grid">
           <div class="metric-card">
@@ -77,11 +77,21 @@
             <div class="metric-label">Enterprise IT Experience</div>
           </div>
           <div class="metric-card">
-            <div class="metric-value">E&Y Bengaluru</div>
+            <div class="metric-value metric-with-logo">
+              <span class="company-badge" title="E&Y (Ernst &amp; Young)">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/34/EY_logo_2019.svg" alt="EY Logo">
+              </span>
+              <span>E&Y</span>
+            </div>
             <div class="metric-label">Current Role (Apr 2026 – Present)</div>
           </div>
           <div class="metric-card">
-            <div class="metric-value">CGI (5.4 Yrs)</div>
+            <div class="metric-value metric-with-logo">
+              <span class="company-badge" title="CGI">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/32/CGI_logo.svg" alt="CGI Logo">
+              </span>
+              <span>CGI (5.4 Yrs)</span>
+            </div>
             <div class="metric-label">Previous Tenure (2020 – 2026)</div>
           </div>
           <div class="metric-card">
@@ -90,7 +100,7 @@
           </div>
         </div>
       </section>
-
+      
       <!-- Career Journey Summary -->
       <section class="section-block">
         <div class="section-header">
@@ -103,12 +113,12 @@
             <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
-
+        
         <div class="card-grid-2">
           <article class="card">
             <div class="exp-top">
               <div>
-                <h3 class="exp-role">Java Developer</h3>
+                <h3 class="exp-role">Senior Consultant</h3>
                 <div class="exp-company">E&Y (Ernst &amp; Young) · Bengaluru</div>
               </div>
               <span class="date-pill current">Apr 2026 – Present</span>
@@ -123,11 +133,11 @@
               <span class="tag">Apache Kafka</span>
             </div>
           </article>
-
+          
           <article class="card">
             <div class="exp-top">
               <div>
-                <h3 class="exp-role">Java Developer</h3>
+                <h3 class="exp-role">Software Engineer</h3>
                 <div class="exp-company">CGI · Bengaluru</div>
               </div>
               <span class="date-pill">Oct 2020 – Mar 2026</span>
@@ -144,7 +154,7 @@
           </article>
         </div>
       </section>
-
+      
       <!-- Core Stack -->
       <section class="section-block" style="margin-bottom: 0;">
         <div class="section-header">
@@ -153,7 +163,7 @@
             <span>Core Technology Stack</span>
           </h2>
         </div>
-
+        
         <div class="card">
           <div class="tag-list">
             <span class="tag accent">Java</span>
@@ -174,7 +184,7 @@
       </section>
     </div>
   </main>
-
+  
   <footer class="site-footer">
     <div class="container footer-inner">
       <p class="copyright">Copyright &copy; 2026 Sachin Hegde. All rights reserved.</p>
@@ -197,13 +207,13 @@
       </div>
     </div>
   </footer>
-
+  
   <button id="scrollTopBtn" title="Back to top" aria-label="Back to top">
     <i class="fa-solid fa-arrow-up"></i>
   </button>
-
+  
   <div class="toast" id="toast" role="status" aria-live="polite">Email copied to clipboard!</div>
-
+  
   <script>
     // Theme toggle persistence
     const root = document.documentElement;
@@ -213,7 +223,7 @@
       root.setAttribute('data-theme', 'light');
       themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
     }
-
+    
     themeToggle.addEventListener('click', () => {
       const isLight = root.getAttribute('data-theme') === 'light';
       if (isLight) {
@@ -226,14 +236,14 @@
         themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
       }
     });
-
+    
     // Mobile menu
     const mobileToggle = document.getElementById('mobileToggle');
     const navLinks = document.getElementById('navLinks');
     mobileToggle.addEventListener('click', () => {
       navLinks.classList.toggle('open');
     });
-
+    
     // Copy email helper
     function copyEmail() {
       navigator.clipboard.writeText('sachinhegde0411@gmail.com');
@@ -241,7 +251,7 @@
       toast.classList.add('show');
       setTimeout(() => toast.classList.remove('show'), 2400);
     }
-
+    
     // Scroll to top
     const scrollBtn = document.getElementById('scrollTopBtn');
     window.addEventListener('scroll', () => {
